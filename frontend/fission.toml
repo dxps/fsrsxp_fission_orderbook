@@ -1,0 +1,9 @@
+targets = [
+    "web",
+]
+
+[app]
+name = "frontend"
+app_id = "ro.tradeville.fission_orderbook"
+version = "0.1.0"
+build = 1

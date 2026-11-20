@@ -1,0 +1,27 @@
+[package]
+name = "frontend"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+name = "frontend"
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = ["standalone-entry"]
+standalone-entry = []
+
+[dependencies]
+shared = { path = "../shared" }
+fission = { version = "0.16.0", default-features = false, features = ["web"] }
+serde = { workspace = true }
+serde_json = { workspace = true }
+anyhow = "1"
+console_error_panic_hook = "0.1"
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+gloo-net = { version = "0.6", features = ["http"] }
+web-sys = { version = "0.3", features = ["WebSocket", "MessageEvent", "BinaryType", "ErrorEvent", "CloseEvent"] }
+js-sys = "0.3"
+log = "0.4"
